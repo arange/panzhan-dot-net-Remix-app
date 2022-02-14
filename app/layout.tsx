@@ -1,11 +1,17 @@
 import { Link } from "remix";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({
+  children,
+  name = "Pan Zhan",
+}: {
+  children: React.ReactNode;
+  name?: string;
+}) {
   return (
     <>
       <article className="flex flex-col pt-32 pb-20 mx-auto max-w-prose">
         <h1 className="font-extrabold text-4xl mb-3">
-          <Link to="/">Pan Zhan</Link>
+          <Link to="/">{name}</Link>
         </h1>
         <nav className="self-end underline gap-2 flex">
           <Link to="posts">Posts</Link>
@@ -14,7 +20,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {children}
         <div className="flex justify-between mt-32 px-4">
           <small>
-            <time>2022</time>© Pan Zhan.
+            <time>2022</time>© {name}.
           </small>
           <a
             target="_blank"
