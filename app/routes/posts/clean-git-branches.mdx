@@ -1,0 +1,15 @@
+---
+title: Clean Git Branches
+date: 2021/12/6
+description: Get rid of all other branches
+author: Pan Zhan
+tag: git, tricks
+---
+
+# Clean Git Branches
+
+This command will get rid of all other branches but keep the '**development**' branch:
+
+```bash
+git branch | grep -v "development" | xargs git branch -D 
+```

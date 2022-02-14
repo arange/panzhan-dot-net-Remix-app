@@ -1,0 +1,65 @@
+---
+title: Notes on NextJs tutorial
+date: 2021/12/20
+description: Stuff I find useful or intersting
+author: Pan Zhan
+tag: 'nextjs, notes'
+published: true
+---
+
+# Notes on NextJs tutorial
+[Tutorial Link](https://nextjs.org/learn/basics/create-nextjs-app)
+
+## client-side navigation via Link component
+> The Link component enables **client-side navigation** between two pages in the same Next.js app. [→](https://nextjs.org/learn/basics/navigate-between-pages/client-side#:~:text=The%20Link%20component%20enables%20client%2Dside%20navigation%20between%20two%20pages%20in%20the%20same%20Next.js%20app.)
+
+> Client-side navigation means that the page transition happens using JavaScript, which is faster than the default navigation done by the browser.
+
+Link component also does prefetching, check [here](https://nextjs.org/docs/api-reference/next/link)
+
+### Question
+- Is it something new(added by nextjs and is not provided by React)?
+**Yes**
+
+- What's the difference between this Link component and the one in react-router?
+**TBA**
+
+## code splitting
+> Next.js does code splitting automatically, so each page only loads what’s necessary for that page. That means when the homepage is rendered, the code for other pages is not served initially.
+
+## image optimization
+### Image component
+1. It is an extension of the HTML `img` element.
+2. By default resizing, optimizing, [WebP](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#webp_image) support.
+3. Source-agnostic. Even if the image is hosted by external data source like CMS, auto optimization still works.
+
+**The key point is to ship smaller file to smaller viewport.**
+
+### Optimize on-demand
+Images are always _lazy loaded by default_, and are _optimized on-demand_, as users request them. Therefore build time and page speed remains the same because they only load when scroll into view.
+
+## Metadata
+### `Head` component
+Use Head to modify `head` element for the page.
+When two meta tag are added with the same `key` prop, the latter will override the former.
+
+## [Global css](https://nextjs.org/learn/basics/assets-metadata-css/global-styles)
+In Next.js, you can add global CSS files by importing them from **pages/_app.js**. You **cannot** import global CSS anywhere else.
+
+This is also how you would add tailwind's classes into your NextJS project.
+
+## [Pre-rendering](https://nextjs.org/learn/basics/data-fetching/pre-rendering)
+By default, Next.js pre-renders every page. HTML files pre-generated => better performance and SEO.
+
+> When a page is loaded by the browser, its JavaScript code runs and makes the page fully interactive. (This process is called **_hydration_**.)
+
+### SSG and SSR
+- **Static Generation** is the pre-rendering method that generates the HTML at build time. The pre-rendered HTML is then reused on each request.
+- **Server-side Rendering** is the pre-rendering method that generates the HTML on each request.
+
+### When to use which
+> Can I pre-render this page ahead of a user's request?
+
+If yes then go for Static Generation -> it's fast!
+
+‼️**Next.js allows you to use both of them in the same project and you get to choose which page uses what method.**
