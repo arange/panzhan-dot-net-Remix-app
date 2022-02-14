@@ -61,7 +61,6 @@ export async function loader() {
 
 export default function Posts() {
   const posts = useLoaderData<Post[]>();
-  console.log({ posts });
 
   return (
     <ul>
