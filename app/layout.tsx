@@ -14,12 +14,12 @@ export default function Layout({
           <Link to="/">{name}</Link>
         </h1>
         <nav className="self-end underline gap-2 flex">
-          <Link prefetch="render" to="posts">
+          <Link prefetch="intent" to="posts">
             Posts
           </Link>
         </nav>
         {children}
-        <div className="flex justify-between mt-32 px-4">
+        <div className="flex justify-between mt-32">
           <small>
             <time>2022</time>© {name}.
           </small>

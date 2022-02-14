@@ -66,7 +66,7 @@ export default function Posts() {
     <ul>
       {posts.map((post) => (
         <li key={post.slug}>
-          <Link to={post.slug} className="font-bold text-lg">
+          <Link prefetch="intent" to={post.slug} className="font-bold text-lg">
             {post.title}
           </Link>
           {post.description ? <p>{post.description}</p> : null}
