@@ -15,7 +15,6 @@ export default function Layout({
         </h1>
         <nav className="self-end underline gap-2 flex">
           <Link to="posts">Posts</Link>
-          <Link to="arts">Arts</Link>
         </nav>
         {children}
         <div className="flex justify-between mt-32 px-4">
