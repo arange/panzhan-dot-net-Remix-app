@@ -22,6 +22,14 @@ Afterwards, start the Remix development server like so:
 npm run dev
 ```
 
+To use tailwind and rebuild whenever you make changes, also run
+```sh
+npm run tailwind
+```
+
 Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
 
 If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
+
+Live URL:
+[https://panzhan-dot-net-remix-app.vercel.app/](https://panzhan-dot-net-remix-app.vercel.app/)
